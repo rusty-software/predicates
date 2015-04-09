@@ -27,7 +27,7 @@
       (= (seq string) (filter whitespace? string))))
 
 (defn has-award? [book award]
-  :-)
+  (not (nil? (award (:awards book)))))
 
 (defn HAS-ALL-THE-AWARDS? [book awards]
   :-)
