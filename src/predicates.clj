@@ -30,7 +30,7 @@
   (not (nil? (award (:awards book)))))
 
 (defn HAS-ALL-THE-AWARDS? [book awards]
-  :-)
+  (= (seq awards) (seq (filter (:awards book) awards))))
 
 (defn my-some [pred a-seq]
   :-)
