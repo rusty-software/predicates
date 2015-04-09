@@ -33,7 +33,10 @@
   (= (seq awards) (seq (filter (:awards book) awards))))
 
 (defn my-some [pred a-seq]
-  :-)
+  (if (seq a-seq)
+    (or (pred (first a-seq))
+        (recur pred (next a-seq)))
+    nil))
 
 (defn my-every? [pred a-seq]
   :-)
