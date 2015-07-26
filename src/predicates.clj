@@ -39,8 +39,13 @@
       false)))
 
 (defn my-every? [pred a-seq]
-  :-)
+  (if (seq a-seq)
+    (let [vals-set (into #{} (map pred a-seq))]
+      (and (= 1 (count vals-set))
+           (first vals-set)))
+    true))
 
 (defn prime? [n]
-  :-)
+  (let [divides-evenly? (fn [cur] (= 0 (mod n cur)))]
+    (not (some divides-evenly? (range 2 n)))))
 ;^^
